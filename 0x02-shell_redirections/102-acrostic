@@ -1,0 +1,3 @@
+#!/bin/bash
+cut -c1 Acrostic |tr "
+" " " | tr -d" " ;echo
