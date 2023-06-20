@@ -22,7 +22,7 @@ printf("\n");
 n++;
 }
 }
-if (n >= 98)
+else
 {
 while (n >= 98)
 {
