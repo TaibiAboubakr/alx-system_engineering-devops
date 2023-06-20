@@ -1,34 +1,33 @@
 #include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * main -prints the first 98 Fibonacci numbers,
+ * Return: ALways 0 (Success)
  */
 int main(void)
 {
-int i;
-unsigned long oldsum = 0, oldoldsum = 0, newsum = 1, newsum1=0, newsum2=0;
-for (i = 1; i <= 98; i++)
+unsigned long int i, j, k, l, m, n, o;
+j = 1;
+k = 2;
+printf("%lu", j);
+for (i = 1; i <= 90; i++)
 {
-oldoldsum = oldsum;
-oldsum = newsum;
-newsum = oldsum + oldoldsum;
-if (newsum <= 2147483647)
-printf("%ld, ", newsum);
-
-if (newsum > 2147483647){
-newsum1= newsum / 10000000000;
-newsum2= newsum % 10000000000;
-if (i < 98){
-printf("%lu", newsum1);
-printf("%lu,", newsum2);
+	printf(", %lu", k);
+	k = k + j;
+	j = k - j;
 }
-else{
-printf("%lu", newsum1);
-printf("%lu,\n", newsum2);
+l = j / 1000000000;
+m = j % 1000000000;
+n = k / 1000000000;
+o = k % 1000000000;
+for (i = 92; i <= 99; ++i)
+{
+printf(", %lu", n + (o / 1000000000));
+printf("%lu", o % 1000000000);
+n = n + l;
+l = n - l;
+o = o + m;
+m = o - m;
 }
-}
-}
+printf("\n");
 return (0);
 }
