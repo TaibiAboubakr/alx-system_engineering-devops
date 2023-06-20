@@ -15,7 +15,7 @@ newsum = oldsum + oldoldsum;
 if (i < 50)
 printf("%ld, ", newsum);
 else
-printf("%ld,\n", newsum);
+printf("%ld \n", newsum);
 }
 return (0);
 }
