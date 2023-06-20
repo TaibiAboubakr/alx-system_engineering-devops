@@ -17,6 +17,6 @@ if (newsum < 4000000)
 allsum += newsum;
 }
 }
-printf("The sum of the even-valued terms is : %ld \n", allsum);
+printf("%ld\n", allsum);
 return (0);
 }
