@@ -14,6 +14,6 @@ b = i % 5;
 if (a == 0 || b == 0)
 sum += i;
 }
-printf("%d \n", sum);
+printf("%d\n", sum);
 return (0);
 }
