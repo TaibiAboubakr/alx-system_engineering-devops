@@ -14,7 +14,7 @@ int newday = day;
 if ((year % 4 == 0 || year % 400 == 0) && month >= 2)
 newday = day - 1;
 if (month > 12 || month < 1 || day < 1 || (month == 1 && newday > 31) ||
-(month == 2 && newday > 59) ||
+
 (month == 3 && newday > 90) ||
 (month == 4 && newday > 120) ||
 (month == 5 && newday > 151) ||
