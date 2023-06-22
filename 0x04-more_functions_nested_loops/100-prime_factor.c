@@ -24,16 +24,15 @@ i /= j;
 else
 j++;
 }
-printf("The prime factors of 612852475143 are ");
+/*
+*printf("The prime factors of 612852475143 are ");
+*/
 for (b = 0 ; b < a ; b++)
 {
 printf("%ld", prime[b]);
-if (prime[b] <  m)
-printf(", ");
-if (prime[b] == m)
-printf(" and ");
+if (prime[b] <=  m)
+printf(",");
 }
-printf(".");
 printf("\n");
 return (0);
 }
