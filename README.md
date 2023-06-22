@@ -7,7 +7,7 @@ To run the code in this repository, you need a C compiler installed on your mach
 
 git clone https://github.com/TaibiAboubakr/alx-low_level_programming.git
 
-## Directory: 0x00-hello_world
+## <span style="color: green;">Directory: 0x00-hello_world</span> 
 ### C Compilation Steps
 
 This directory contains multiple scripts related to the different steps involved in compiling C programs: preprocessing, compiling, assembling, and linking. Here is a brief description of each step:
