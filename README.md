@@ -36,3 +36,6 @@ This directory contains programs written in the C programming language that focu
 - Debugging is an essential skill for identifying and fixing issues or errors in programs. 
 - The programs in this directory will help you learn how to analyze and troubleshoot code to ensure it runs correctly. 
 - Understanding debugging techniques is crucial for developing robust and error-free software in C.
+
+## Directory: 0x04-more_functions_nested_loops
+This directory contains programs written in the C programming language that focus on more advanced concepts related to functions and nested loops.
