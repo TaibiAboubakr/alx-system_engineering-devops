@@ -22,10 +22,9 @@ i /= j;
 else
 j++;
 }
-for (b = 0 ; b < a ; b++)
+for (b = a -1 ; b < a ; b++)
 {
 printf("%d", prime[b]);
-
 }
 printf("\n");
 return (0);
