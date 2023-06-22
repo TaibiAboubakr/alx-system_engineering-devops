@@ -24,7 +24,7 @@ i /= j;
 else
 j++;
 }
-printf ("The prime factors of 612852475143 are ");
+printf("The prime factors of 612852475143 are ");
 for (b = 0 ; b < a ; b++)
 {
 printf("%ld", prime[b]);
