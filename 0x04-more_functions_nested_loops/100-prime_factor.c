@@ -15,7 +15,7 @@ if ((i % j) == 0)
 {
 printf("%d", j);
 if (i / j != 1)
-printf(",");
+printf(", ");
 i /= j;
 }
 else
