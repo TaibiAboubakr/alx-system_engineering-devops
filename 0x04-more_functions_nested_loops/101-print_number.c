@@ -5,33 +5,38 @@
  */
 void print_number(int n)
 {
-if (n >= 0 && n < 10)
+int a;
+a = n;
+if (n < 0)
+a = n * -1;
+if (a >= 0 && a < 10)
 {
-_putchar('0' + n);
-}
-else if (n >= 10 && n < 100)
-{
-_putchar('0' + n / 10);
-_putchar('0' +  n % 10);
-}
-else if (n >= 100 && n < 1000)
-{
-_putchar('0' + n / 100);
-_putchar('0' + (n % 100) / 10);
-_putchar('0' +  n % 10);
-}
-else if (n >= 1000 && n < 9999)
-{
-_putchar('0' + n / 1000);
-_putchar('0' + (n % 1000) / 100);
-_putchar('0' + (n % 100) / 10);
-_putchar('0' + n % 10);
-}
-else if (n < -10 && n > -100)
-{
-n = n * -1;
+if (n < 0)
 _putchar('-');
-_putchar('0' +  n / 10);
-_putchar('0' +  n % 10);
+_putchar('0' + a);
+}
+else if (a >= 10 && a < 100)
+{
+if (n < 0)
+_putchar('-');
+_putchar('0' + a / 10);
+_putchar('0' +  a % 10);
+}
+else if (a >= 100 && a < 1000)
+{
+if (n < 0)
+_putchar('-');
+_putchar('0' + a / 100);
+_putchar('0' + (a % 100) / 10);
+_putchar('0' +  a % 10);
+}
+else if (a >= 1000 && a < 9999)
+{
+if (n < 0)
+_putchar('-');
+_putchar('0' + a / 1000);
+_putchar('0' + (a % 1000) / 100);
+_putchar('0' + (a % 100) / 10);
+_putchar('0' + a % 10);
 }
 }
