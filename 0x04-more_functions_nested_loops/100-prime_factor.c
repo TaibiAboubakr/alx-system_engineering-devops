@@ -14,6 +14,7 @@ while (i > 1)
 if ((i % j) == 0)
 {
 printf("%d", j);
+if (i / j != 1)
 printf(" ");
 i /= j;
 }
