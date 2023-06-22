@@ -31,7 +31,7 @@ for (b = 0 ; b < a ; b++)
 {
 printf("%ld", prime[b]);
 if (prime[b] <=  m)
-printf(",");
+m=m;
 }
 printf("\n");
 return (0);
