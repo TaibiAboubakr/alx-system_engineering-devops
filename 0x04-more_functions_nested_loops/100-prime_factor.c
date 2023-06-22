@@ -32,6 +32,7 @@ printf(", ");
 if (prime[b] == m)
 printf(" and ");
 }
+printf(".");
 printf("\n");
 return (0);
 }
