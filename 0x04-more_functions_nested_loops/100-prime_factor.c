@@ -28,7 +28,6 @@ for (b = 0 ; b < a ; b++)
 {
 printf("%d", prime[b]);
 if (prime[b] <=  m)
-printf(",");
 }
 printf("\n");
 return (0);
