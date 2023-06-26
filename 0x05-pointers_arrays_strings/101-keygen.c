@@ -11,7 +11,7 @@ int main(void)
 {
 int i;
 int sum = 2772;
-for (i = 57; sum > 0 && i > 0;)
+for (i = 126; sum > 0 && i > 0;)
 {
 if (sum - i >= 0)
 {
