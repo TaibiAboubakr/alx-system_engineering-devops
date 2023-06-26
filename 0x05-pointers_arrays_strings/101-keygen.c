@@ -9,9 +9,12 @@
 
 int main(void)
 {
-int i;
 int sum = 2772;
-for (i = 126; sum > 0 && i > 0;)
+srand(time(NULL));
+int i = 0;
+while (i < 48)
+i = rand() % 126;
+for (; sum > 0 && i > 0;)
 {
 if (sum - i >= 0)
 {
