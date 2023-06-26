@@ -39,3 +39,7 @@ This directory contains programs written in the C programming language that focu
 
 ## Directory: 0x04-more_functions_nested_loops
 This directory contains programs written in the C programming language that focus on more advanced concepts related to functions and nested loops.
+
+## ## Directory: 0x05-pointers_arrays_strings
+
+This directory contains programs written in the C programming language that delve into the concepts of pointers, arrays, and strings. Building upon the fundamental concepts covered in the previous directories (0x02-functions_nested_loops and 0x04-more_functions_nested_loops), this directory explores additional functionalities and techniques for manipulating and working with memory addresses, arrays, and strings in C.
