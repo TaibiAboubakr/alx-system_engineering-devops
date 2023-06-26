@@ -21,7 +21,7 @@ _putchar(str[i]);
 else
 {
 h = (l - 1) / 2;
-for (i = h; i < l; i++)
+for (i = h+1; i < l; i++)
 _putchar(str[i]);
 }
 _putchar('\n');
