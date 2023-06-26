@@ -11,10 +11,9 @@ int main(void)
 {
 int sum = 2772, i = 0;
 srand(time(NULL));
-do
-{
+do {
 i = rand() % 126;
-} while (i < 48);
+} while (i < 32);
 for (; sum > 0 && i > 0;)
 {
 if (sum - i >= 0)
