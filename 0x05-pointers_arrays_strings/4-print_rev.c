@@ -10,7 +10,6 @@ for (i = 0; str[i] != '\0'; i++)
 {
 l++;
 }
-_putchar(l + 48);
 for (i = l - 1; i >= 0; i--)
 {
 _putchar(str[i]);
