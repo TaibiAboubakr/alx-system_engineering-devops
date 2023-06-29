@@ -1,14 +1,16 @@
-
 #include "main.h"
+#include <stdlib.h>
+#include <string.h>
+
 /**
- * reverse_carray - reverses the content of an array of integers.
- * @a: A pointer to an array
- * @n: is the number of elements of the array
+ * reverse_array - reverses the content of an array of characters.
+ * @arr: A pointer to an array
+ * @size: The number of elements in the array
  */
 void reverse_carray(char *a, int n)
 {
 int l = n - 1, i, s;
-for (i = 0; i < n && i <= l ; i++)
+for (i = 0; i < n && i <= l; i++)
 {
 s = a[i];
 a[i] = a[l];
@@ -16,54 +18,42 @@ a[l] = s;
 l--;
 }
 }
+
 /**
- * *infinite_add - function that adds two numbers.
- * @n1: the first number
- * @n2: the second number
- * @r: is the buffer that the function will use to store the result
- * @size_r: is the buffer size
- * Return: a pointer to the result string
+ * infinite_add - function that adds two numbers.
+ * @n1: The first number as a string
+ * @n2: The second number as a string
+ * @r: The buffer that stores the result
+ * @size_r: The size of the buffer
+ * Return: A pointer to the result string, or 0 if the result can't fit in r
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int dn = 0, dm = 0, i, ln = 0, lm = 0, g, sum, rem = 0, cr = 0;
-for (i = 0; n1[i] != '\0' ; i++)
-ln++;
-for (i = 0; n2[i] != '\0' ; i++)
-lm++;
-if (ln > lm)
-dn = ln - lm;
-if (lm > ln)
-dm = lm - ln;
-g = (ln > lm) ? ln : lm;
-if (ln == 0 || lm == 0)
+int len1 = strlen(n1);
+int len2 = strlen(n2);
+int max_len = size_r - 1;
+int carry = 0;
+int i = 0;
+if (len1 > max_len || len2 > max_len)
 return (0);
-if (lm != 0 && ln != 0)
+while (len1 > 0 || len2 > 0)
 {
-i = g - 1;
-for (; i >= 0; i--)
-{
-if (i - dm >= 0 && i - dm >= 0)
-sum = (((n1[i - dm] - 48) + (n2[i - dn] - 48) + rem));
-else if (i - dm >= 0)
-sum = (((n1[i - dm] - 48) + rem));
-else if (i - dn >= 0)
-sum = (((n2[i - dn] - 48) + rem));
-rem = sum / 10;
-if (cr > size_r)
-{
+int digit1 = (len1 > 0) ? n1[--len1] - '0' : 0;
+int digit2 = (len2 > 0) ? n2[--len2] - '0' : 0;
+int sum = digit1 + digit2 + carry;
+if (i >= max_len)
 return (0);
-break;
+
+r[i++] = sum % 10 + '0';
+carry = sum / 10;
 }
-r[cr] = (sum % 10)  + '0';
-cr++;
-if (i == 0 && rem != 0)
+if (carry > 0)
 {
-r[cr] = rem + '0';
-cr++;
+if (i >= max_len)
+return (0);
+r[i++] = carry + '0';
 }
-}
-reverse_carray(r, cr);
-}
+r[i] = '\0';
+reverse_carray(r, i);
 return (r);
 }
