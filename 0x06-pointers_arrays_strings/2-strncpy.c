@@ -9,35 +9,15 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 char *p_dest = dest;
-int d = 0, c = 0, s = 0;
-while (*dest != '\0')
+while (*src && n > 0)
 {
-d++;
-dest++;
+*dest++ = *src++;
+n--;
 }
-while (*src != '\0')
+while (n > 0)
 {
-s++;
-src++;
-}
-src = src - s;
-dest = dest - d;
-if (d >= s)
-{
-while (*src != '\0' && c < n)
-{
-*dest = *src;
-dest++;
-src++;
-c++;
-}
-if (n > s)
-{
-for (; c <= d; c++)
-*dest = '\0';
-dest++;
-}
+*dest++ = '\0';
+n--;
 }
 return (p_dest);
 }
-
