@@ -3,9 +3,9 @@
 #include <string.h>
 
 /**
- * reverse_array - reverses the content of an array of characters.
- * @arr: A pointer to an array
- * @size: The number of elements in the array
+ * reverse_carray - reverses the content of an array of characters.
+ * @a: A pointer to an array
+ * @n: The number of elements in the array
  */
 void reverse_carray(char *a, int n)
 {
