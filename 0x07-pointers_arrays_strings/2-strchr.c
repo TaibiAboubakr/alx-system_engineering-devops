@@ -2,7 +2,7 @@
 /**
  * *_strchr - function that locates a character in a string
  * @s: pointer to the source string
- * @n: number of bytes to copy from memory area src to memory area dest
+ * @c: the character to matched
  * Return: pointer to the first occurrence of the character c in the string s
  * or NULL if the character is not found
  */
