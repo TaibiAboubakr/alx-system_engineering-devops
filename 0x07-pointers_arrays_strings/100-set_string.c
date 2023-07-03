@@ -8,18 +8,9 @@
  */
 void set_string(char **s, char *to)
 {
-int i = 0, j = 0, k = 0, l;
-while ((*s)[j] != '\0')
-j++;
-while (to[i] != '\0')
-i++;
-l = i;
-if (j >= i)
-{
-for (k = 0; k < l ; k++)
-{
+
+
 *s = to;
-}
-}
-/* (*s)[j]='\0'; */
+
+
 }
