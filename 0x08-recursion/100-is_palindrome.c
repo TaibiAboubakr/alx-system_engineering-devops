@@ -36,13 +36,15 @@ return (1 + _strlen_rec(sl));
 int _is_palindrome(char *starts, char *ends, int len, int l)
 {
 
-if (*starts == *ends && l < len - 1)
+if (*starts == *ends && *starts != '\0')
 {
 starts++;
 ends--;
-_is_palindrome(starts, ends, len, l + 1);
+return (_is_palindrome(starts, ends, len, l + 1));
 }
 if (*starts != *ends)
 return (0);
+
 return (1);
+
 }
