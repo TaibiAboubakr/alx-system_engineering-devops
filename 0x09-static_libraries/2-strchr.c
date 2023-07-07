@@ -18,7 +18,7 @@ else if (*s != c && *s != '\0')
 s++;
 else if (*s == '\0')
 {
-s = NULL;
+s = '\0';
 break;
 }
 }
