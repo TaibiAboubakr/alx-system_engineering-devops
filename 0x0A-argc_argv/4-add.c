@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 char *endptr;
 int i;
-long x, sum = 0;
+int x, sum = 0;
 if (argc == 1)
 {
 printf("0\n");
@@ -35,6 +35,6 @@ return (1);
 }
 sum += x;
 }
-printf("%ld\n", sum);
+printf("%d\n", sum);
 return (0);
 }
