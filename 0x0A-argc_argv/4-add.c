@@ -11,7 +11,6 @@
  */
 int main(int argc, char *argv[])
 {
-char *endptr;
 int i;
 int x, sum = 0;
 if (argc == 1)
@@ -22,8 +21,8 @@ return (1);
 
 for (i = 1; i < argc; i++)
 {
-x = strtol(argv[i], &endptr, 10);
-if (errno != 0 || *endptr != '\0')
+x = atoi(argv[i]);
+if (errno != 0)
 {
 printf("Error\n");
 return (1);
