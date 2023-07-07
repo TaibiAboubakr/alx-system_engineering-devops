@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * is_palindrome - returns 1 if the input integer is a prime number,
+ * is_palindrome - returns 1 if a string is palindrome, 0 otherwise
  * is_prime_recursive- recursive
  * @s: pointer to string
  * Return: 1 if palindrome, 0 otherwise
@@ -18,6 +18,7 @@ return (_is_palindrome(s, s + (_strlen_rec(s) - 1), (_strlen_rec(s)), 0));
  * @sl: pointer to a string
  * Return: length of a string
  */
+
 int _strlen_rec(char *sl)
 {
 if (*sl == '\0')
