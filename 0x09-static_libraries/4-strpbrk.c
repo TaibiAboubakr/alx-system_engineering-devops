@@ -19,6 +19,6 @@ return (s);
 }
 s++;
 }
-s = NULL;
+s = '\0';
 return (s);
 }
