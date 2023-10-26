@@ -4,6 +4,6 @@ FILE=apache-access.log
 
 if [ -e "$FILE" ]; then
     SORTED_FILE=$(awk '{print $1, $9}' "$FILE" | sort)
-    COUNTED_OUTPUT=$(echo "$SORTED_FILE" | uniq -c | sort -rn)
+    COUNTED_OUTPUT=$(echo "$SORTED_FILE" | uniq -c | sort -r)
     echo "$COUNTED_OUTPUT"
 fi
