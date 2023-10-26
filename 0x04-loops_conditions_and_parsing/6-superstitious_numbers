@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#superstitious_numbers
 i=1
 
 while [ "$i" -le 20 ]

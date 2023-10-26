@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# print the feilds 1,2 and 3 from file etc/passwd
 
 FILE=/etc/passwd
 if [ -e "$FILE" ]; then

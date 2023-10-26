@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# checks if file exists and if empty and if regular file
 FILE=school
 if test -e "$FILE"; then
     echo "$FILE file exists."

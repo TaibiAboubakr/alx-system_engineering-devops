@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# 4_bad_luck_8_is_your_chance
 i=1
 
 while [ "$i" -le 10 ]
