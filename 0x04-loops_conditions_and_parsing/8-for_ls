@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+list=$(ls)
+for file in $list
+do
+	basename="${file#[0-9]*-}"
+	echo "$basename"
+
+done

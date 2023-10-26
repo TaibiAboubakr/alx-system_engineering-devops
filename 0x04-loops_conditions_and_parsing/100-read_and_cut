@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+FILE=/etc/passwd
+if [ -e "$FILE" ]; then
+while IFS=':' read -r f1 f2 f3 _; do
+    echo "$f1:$f2:$f3"
+done < "$FILE"
+fi
