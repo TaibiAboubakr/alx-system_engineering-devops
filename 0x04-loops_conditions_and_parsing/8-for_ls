@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # print the basenmae of files in the current directory
 list=$(ls)
-for file in $list
+for file in $list;
 do
-	basename="${file#[0-9]*-}"
-	echo "$basename"
-
+  echo "$file" | cut -d '-' -f 2;
 done
