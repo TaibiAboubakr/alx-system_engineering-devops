@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Bash script that :
+#Creates the file /var/run/myscript.pid containing its PID
+#Displays To infinity and beyond indefinitely
+#Displays I hate the kill command when receiving a SIGTERM signal
+#Displays Y U no love me?! when receiving a SIGINT signal
+#Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
+
+
+    case "$1" in
+        start)
+        ./manage_my_process &
+        echo "manage_my_process started"
+        pid=$!
+        echo $pid > /var/run/my_process.pid
+        ;;
+        stop)
+        if [ -f /var/run/my_process.pid ]; then
+          pid=$(cat /var/run/my_process.pid)
+          kill -9 "$pid"
+          rm /var/run/my_process.pid
+          echo "manage_my_process stoped"
+        fi
+        ;;
+        restart)
+        if [ -f /var/run/my_process.pid ]; then
+          pid=$(cat /var/run/my_process.pid)
+          kill -9 "$pid"
+          rm /var/run/my_process.pid  
+        fi
+        ./manage_my_process &
+        echo "manage_my_process restarted"
+        pid=$!
+        echo $pid > /var/run/my_process.pid
+        ;;
+        *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+  esac
