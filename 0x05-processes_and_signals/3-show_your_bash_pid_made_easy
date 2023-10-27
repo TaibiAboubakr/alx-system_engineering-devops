@@ -6,7 +6,7 @@ pids=$(pgrep -f "bash")
 if [ -n "$pids" ]; then
   for pid in $pids; do
     process_name=$(ps -o comm= -p "$pid")
-    echo "$pid    $process_name"
+    echo "$pid $process_name"
   done
 fi
 
