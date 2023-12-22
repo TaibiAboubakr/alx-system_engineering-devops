@@ -1,6 +1,5 @@
-# create a file shcool in /tmp directory.
-$temp = '/tmp/'
-file { "${temp}/shcool":
+#create a file shcool in /tmp directory.
+file { '/tmp/shcool':
   ensure  => present,
   content => 'I love Puppet',
   mode    => '0744',
