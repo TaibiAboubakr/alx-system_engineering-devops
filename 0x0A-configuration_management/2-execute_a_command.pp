@@ -1,5 +1,5 @@
-exec { 'pkill_process':
+exec { 'pkill':
   command  => 'pkill killmenow',
-  provider => 'bash'
+  provider => 'shell'
 }
 
