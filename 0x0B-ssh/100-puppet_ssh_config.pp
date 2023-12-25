@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# init.pp
+# puppet_ssh_config.pp
 
 class ssh_config {
-  file { '/etc/ssh/ssh_config':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => '
-Host *
-    IdentityFile ~/.ssh/school
-    PasswordAuthentication no
-    ',
+  file_line { 'Turn off passwd auth':
+    path   => '/etc/ssh/ssh_config',
+    line   => 'PasswordAuthentication no',
+    match  => '^#?PasswordAuthentication',
+  }
+
+  file_line { 'Declare identity file':
+    path   => '/etc/ssh/ssh_config',
+    line   => '    IdentityFile ~/.ssh/school',
+    match  => '^#?IdentityFile',
   }
 }
+include ssh_config
