@@ -2,7 +2,7 @@
 # Script thats install nginx web server
 
 apt-get install -y nginx
-echo "<html><body><p>Hello World!</p></body></html>" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
     listen 80 default_server;
