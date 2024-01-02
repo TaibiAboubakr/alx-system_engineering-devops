@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Script thats install nginx web server
-
+apt-get -y update
+apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+ufw allow 'Nginx HTTP'
 tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
     listen 80 default_server;
@@ -9,14 +12,10 @@ server {
     root /var/www/html;
     index index.html;
 
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
     location / {
         try_files \$uri \$uri/ =404;
     }
 }
 EOF
 
-# Restart Nginx
 sudo service nginx restart
