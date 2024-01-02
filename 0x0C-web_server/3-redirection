@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Script thats install nginx web server
+
+tee /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+    location /redirect_me {
+        return 301 http://localhost\$request_uri;
+    }
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOF
+
+# Restart Nginx
+sudo service nginx restart
