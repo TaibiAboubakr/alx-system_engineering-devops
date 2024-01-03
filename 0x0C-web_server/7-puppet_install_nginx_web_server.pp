@@ -10,6 +10,12 @@ package { 'nginx':
   ensure => installed,
 }
 
+# change folder rights
+exec { 'chmod www folder':
+  command => 'chmod -R 755 /var/www',
+  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+}
+
 file { '/var/www/html/index.html':
   ensure  => present,
   content => 'Hello Wolrd!',
@@ -46,8 +52,12 @@ exec { 'ufw':
   command  => "ufw allow 'Nginx HTTP'",
   provider => 'shell',
 }
+exec { 'restart nginx service':
+  command => 'service nginx restart',
+  path    => '/usr/bin:/usr/sbin:/bin',
+}
 
-exec { 'restart':
-  command  => 'service nginx restart',
-  provider => 'shell',
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
 }
