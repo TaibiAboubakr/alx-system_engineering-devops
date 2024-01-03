@@ -44,10 +44,10 @@ file { '/var/www/html/404.html':
 
 exec { 'ufw':
   command  => "ufw allow 'Nginx HTTP'",
-  provider => 'shell'
+  provider => 'shell',
 }
 
 exec { 'restart':
   command  => 'service nginx restart',
-  provider => 'shell'
+  provider => 'shell',
 }
