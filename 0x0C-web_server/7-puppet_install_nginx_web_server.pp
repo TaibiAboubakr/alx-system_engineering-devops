@@ -1,4 +1,3 @@
-#!/usr/bin/puppet
 # Install and configure Nginx web server
 exec { 'apt-update':
     command => '/usr/bin/apt-get update'
