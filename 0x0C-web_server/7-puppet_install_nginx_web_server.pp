@@ -45,3 +45,13 @@ file { '/var/www/html/404.html':
   owner   => 'www-data',
   group   => 'www-data',
 }
+
+exec { 'ufw':
+  command  => "ufw allow 'Nginx HTTP'",
+  provider => 'shell'
+}
+
+exec { 'restart':
+  command  => "service nginx restart",
+  provider => 'shell'
+}
