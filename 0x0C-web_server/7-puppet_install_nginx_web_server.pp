@@ -1,11 +1,11 @@
 #!/usr/bin/puppet
 # Install and configure Nginx web server
-exec { 'update':
-  command  => 'apt-get -y update',
-  provider => 'shell',
-  unless   => '/usr/bin/apt-get -q update',
-  logoutput => true,
+exec { "apt-update":
+    command => "/usr/bin/apt-get update"
 }
+
+Exec["apt-update"] -> Package <| |>
+
 package { 'nginx':
   ensure => installed,
 }
@@ -13,11 +13,13 @@ package { 'nginx':
 file { '/var/www/html/index.html':
   ensure  => present,
   content => 'Hello Wolrd!',
+  path => '/var/www/html/index.html',
 
 }
 
 file { '/etc/nginx/sites-available/default':
   ensure  => present,
+  path => '/etc/nginx/sites-available/default',
   content => 'server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -37,6 +39,7 @@ file { '/etc/nginx/sites-available/default':
 
 file { '/var/www/html/404.html':
   ensure  => present,
+  path => '/var/www/html/404.html',
   content => "Ceci n'est pas une page",
 }
 
