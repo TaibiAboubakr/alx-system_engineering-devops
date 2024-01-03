@@ -2,7 +2,9 @@
 # Install and configure Nginx web server
 exec { 'update':
   command  => 'apt-get -y update',
-  provider => 'shell'
+  provider => 'shell',
+  unless   => '/usr/bin/apt-get -q update',
+  logoutput => true,
 }
 package { 'nginx':
   ensure => installed,
@@ -10,10 +12,8 @@ package { 'nginx':
 
 file { '/var/www/html/index.html':
   ensure  => present,
-  content => 'Hello Wolrd!\n',
-  mode    => '0644',
-  owner   => 'www-data',
-  group   => 'www-data',
+  content => 'Hello Wolrd!',
+
 }
 
 file { '/etc/nginx/sites-available/default':
@@ -33,17 +33,11 @@ file { '/etc/nginx/sites-available/default':
         internal;
     }
 }',
-  mode    => '0644',
-  owner   => 'www-data',
-  group   => 'www-data',
 }
 
 file { '/var/www/html/404.html':
   ensure  => present,
   content => "Ceci n'est pas une page",
-  mode    => '0644',
-  owner   => 'www-data',
-  group   => 'www-data',
 }
 
 exec { 'ufw':
