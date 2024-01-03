@@ -2,7 +2,7 @@
 # Script thats install nginx web server
 apt-get -y update
 apt-get install -y nginx
-echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 ufw allow 'Nginx HTTP'
 tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
