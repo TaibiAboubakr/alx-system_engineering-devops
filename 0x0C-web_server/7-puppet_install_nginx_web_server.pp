@@ -26,7 +26,7 @@ file { '/etc/nginx/sites-available/default':
     index index.html;
 
     location /redirect_me {
-        return 301 http://localhost/new_page;
+        rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
     }
     error_page 404 /404.html;
     location = /404.html {
