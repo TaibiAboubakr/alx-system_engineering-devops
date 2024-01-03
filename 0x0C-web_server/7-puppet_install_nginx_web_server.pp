@@ -33,7 +33,7 @@ file { '/etc/nginx/sites-available/default':
         internal;
     }
 }',
-  mode    => '0744',
+  mode    => '0644',
   owner   => 'www-data',
   group   => 'www-data',
 }
