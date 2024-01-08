@@ -17,7 +17,7 @@ exec { 'chmod www folder':
 
 file { '/var/www/html/index.html':
   ensure  => present,
-  content => 'Hello Wolrd!',
+  content => 'Hello World!',
   path    => '/var/www/html/index.html',
 }
 
