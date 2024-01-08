@@ -39,7 +39,7 @@ file { '/etc/nginx/sites-available/default':
         internal;
     }
 	location / {
-      add_header X-Served-By $hostname;
+        add_header X-Served-By $hostname;
    }
 }',
 }
