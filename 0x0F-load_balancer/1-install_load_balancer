@@ -2,7 +2,6 @@
 # Script thats install load balancer HAProxy
 apt-get -y update
 apt-get install -y haproxy
-ufw allow 'Nginx HTTP'
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy_copy.cfg
 sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOF
 frontend  srv_web_01_02-frontend
