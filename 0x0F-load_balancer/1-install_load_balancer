@@ -3,7 +3,7 @@
 apt-get -y update
 apt-get install -y haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy_copy.cfg
-sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOF
+sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOF
 frontend  srv_web_01_02-frontend
         bind *:80
         mode http
