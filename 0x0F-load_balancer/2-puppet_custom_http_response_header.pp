@@ -24,7 +24,8 @@ file { '/var/www/html/index.html':
 file { '/etc/nginx/sites-available/default':
   ensure  => present,
   path    => '/etc/nginx/sites-available/default',
-  content => 'server {
+  content => @(EOT)
+  server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
@@ -41,7 +42,8 @@ file { '/etc/nginx/sites-available/default':
 	location / {
         add_header X-Served-By $hostname;
    }
-}',
+}
+EOT
 }
 
 file { '/var/www/html/404.html':
