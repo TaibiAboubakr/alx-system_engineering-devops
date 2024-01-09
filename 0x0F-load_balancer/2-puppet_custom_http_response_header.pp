@@ -1,6 +1,7 @@
 # Install and configure Nginx web server
 exec { 'apt-update':
     command => '/usr/bin/apt-get update'
+	before   => package['nginx'],
 }
 
 Exec['apt-update'] -> Package <| |>
