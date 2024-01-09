@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script thats install nginx web server
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-sudo service nginx restart
+apt-get install -y nginx > /dev/null 2&>1
+ufw allow 'Nginx HTTP' > /dev/null 2&>1
+sudo service nginx restart > /dev/null 2&>1
