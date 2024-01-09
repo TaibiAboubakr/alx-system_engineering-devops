@@ -1,7 +1,7 @@
 # Install and configure Nginx web server
 exec { 'apt-update':
   provider => 'shell',
-  command  => 'sudo apt-get update -y',
+  command  => 'sudo apt-get -y update ',
   before   => Exec['install Nginx'],
 }
 
@@ -21,5 +21,5 @@ exec { 'add_header':
 
 exec { 'restart nginx service':
   command  => 'sudo service nginx restart',
-  provider => 'shell'
+  provider => 'shell',
 }
