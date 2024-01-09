@@ -1,11 +1,15 @@
 # Install and configure Nginx web server
 exec { 'apt-update':
-    command => '/usr/bin/apt-get update'
+    command  => 'sudo apt-get update -y'
+	provider => 'shell'
 	before   => package['nginx'],
 }
 
-Exec['apt-update'] -> Package <| |>
-
+exec {'install Nginx':
+  provider => shell,
+  command  => 'sudo apt-get -y install nginx',
+  before   => Exec['add_header'],
+}
 package { 'nginx':
   ensure => installed,
 }
@@ -59,12 +63,12 @@ file { '/var/www/html/404.html':
 }
 
 exec { 'ufw':
-  command  => "ufw allow 'Nginx HTTP'",
+  command  => "sudo ufw allow 'Nginx HTTP'",
   provider => 'shell',
 }
 exec { 'restart nginx service':
-  command => 'service nginx restart',
-  path    => '/usr/bin:/usr/sbin:/bin',
+  command  => 'service nginx restart',
+  provider => 'shell'
 }
 
 service { 'nginx':
