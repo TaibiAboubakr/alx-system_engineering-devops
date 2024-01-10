@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Script thats install nginx web server
-apt-get -y update
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-tee /etc/nginx/sites-available/default > /dev/null <<EOF
+sudo apt-get -y update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
     listen 80 default_server;
 
