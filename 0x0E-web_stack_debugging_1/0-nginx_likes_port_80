@@ -1,16 +1,4 @@
 #!/usr/bin/env bash
-# Script thats install nginx web server
-sudo apt-get -y update
-sudo apt-get install -y nginx
-sudo ufw allow 'Nginx HTTP'
-sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
-server {
-    listen 80 default_server;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF
-
+# Script thats fix nginx web server
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default;
 sudo service nginx restart
