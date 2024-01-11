@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Retrieve information for a specified domain name and its subdomains
-if [ $# -lt 1 ]; then
-	echo "USAGE : ./0-world_wide_web domain [subdomain]"
-fi
+
 if [ $# -eq 1 ]; then
 	domainName="$1"
 	subdomains=("www" "lb-01" "web-01" "web-02")
@@ -13,7 +11,6 @@ if [ $# -eq 1 ]; then
 		echo "The subdomain $subdom is a $record_type record and points to $ip_address"
 	done
 fi
-
 
 if [ $# -eq 2 ]; then
 	domainName="$1"
