@@ -15,7 +15,7 @@ if [ $# -eq 1 ]; then
 fi
 
 
-if [ $# -gt 1 ]; then
+if [ $# -eq 2 ]; then
 	domainName="$1"
 	subdom="$2"
 	res=$(dig "$subdom"."$domainName" +noall +answer)
