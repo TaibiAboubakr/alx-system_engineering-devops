@@ -3,7 +3,7 @@
 awk_function(){
     local domainName="$1"
     local subdom="$2"
-	res=$(dig "$subdom"."$domainName" +noall +answer)
+	res=$(dig "$subdom"."$domainName" +noall +answer | grep "$domainName")
 	record_type=$(echo "$res" | awk '{print $4}')
 	ip_address=$(echo "$res" | awk '{print $5}')
 	echo "The subdomain $subdom is a $record_type record and points to $ip_address"
