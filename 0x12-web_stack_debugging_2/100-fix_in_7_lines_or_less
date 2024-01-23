@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 # Fix this container so that Nginx is running as the nginx user.
 sudo id "nginx" &>/dev/null || sudo useradd -m "nginx"
-#nginx_groups=$(groups nginx | cut -d" " -f1)
-
-# Change ownership of directories
-sudo chown -R nginx:"$(groups nginx | cut -d" " -f1)" /etc/nginx /var/log/nginx /run/nginx.pid
 sudo chmod 755 /run/
 sudo touch /run/nginx.pid
-sudo chown nginx:nginx /run/nginx.pid
-
-#sudo chmod -R u=rwx,g=rx,o= /etc/nginx /var/log/nginx /run/nginx.pid
+sudo chown -R nginx:nginx /etc/nginx /var/log/nginx /run/nginx.pid /usr/sbin/nginx /var/lib/nginx
 sudo sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
-sudo sed -i '/server {/a\    listen 8080;' /etc/nginx/sites-available/default
-
-# Restart Nginx service
-sudo service nginx restart
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+sudo chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
