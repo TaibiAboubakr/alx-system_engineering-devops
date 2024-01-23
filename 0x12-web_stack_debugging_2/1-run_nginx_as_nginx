@@ -17,5 +17,6 @@ sudo chmod -R u=rwx,g=rx,o= /etc/nginx /var/log/nginx /run/nginx.pid
 sudo sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
 sudo sed -i '/^server {/!b; n; /^\s*listen 8080;/b; i\    listen 8080;' /etc/nginx/sites-available/default
 sudo chmod 644 /etc/nginx/nginx.conf
+pkill apache2
 # Restart Nginx service
 sudo -u nginx service nginx start
