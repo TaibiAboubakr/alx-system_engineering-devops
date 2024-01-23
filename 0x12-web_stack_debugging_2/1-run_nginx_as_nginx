@@ -8,7 +8,6 @@ else
     sudo useradd -m -s /bin/bash "$username"
     echo "User $username created successfully."
 fi
-nginx_groups=$(id -gn "$username")
 sudo chmod 755 /run/
 sudo touch /run/nginx.pid
 sudo chown -R nginx:nginx /etc/nginx /var/log/nginx /run/nginx.pid /usr/sbin/nginx /var/lib/nginx
