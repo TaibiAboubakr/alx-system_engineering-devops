@@ -8,17 +8,11 @@ else
     sudo useradd -m "$username"
     echo "User $username created successfully."
 fi
-
-# Check the groups associated with the nginx user
 nginx_groups=$(groups nginx)
-
-
-# Change ownership of directories
-sudo chown -R nginx:"$nginx_group" /etc/nginx /var/log/nginx /run/nginx.pid
+sudo chown -R nginx:"$nginx_groups" /etc/nginx /var/log/nginx /run/nginx.pid
 sudo chmod 755 /run/
 sudo touch /run/nginx.pid
 sudo chown nginx:nginx /run/nginx.pid
-
 #sudo chmod -R u=rwx,g=rx,o= /etc/nginx /var/log/nginx /run/nginx.pid
 sudo sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
 sudo sed -i '/server {/a\    listen 8080;' /etc/nginx/sites-available/default
