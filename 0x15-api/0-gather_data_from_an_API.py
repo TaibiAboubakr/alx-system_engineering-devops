@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Python script that, using this REST API, for a given employee ID,
+returns information about his/her TODO list progress."""
 import requests
 import sys
 """ import moduls """
@@ -6,6 +8,7 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """ get_employee_todo_progress """
+    
     url1 = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     user_response = requests.get(f'{url1}')
     url2 = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
