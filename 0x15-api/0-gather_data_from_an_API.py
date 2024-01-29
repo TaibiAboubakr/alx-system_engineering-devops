@@ -6,6 +6,7 @@ import requests
 import sys
 """ import moduls """
 
+
 def get_employee_todo_progress(employee_id):
     """ get_employee_todo_progress """
 
