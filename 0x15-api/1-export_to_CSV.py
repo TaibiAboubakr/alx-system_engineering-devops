@@ -22,7 +22,7 @@ def get_employee_todo_progress(employee_id):
     user_data = user_response.json()
     todos_data = todos_response.json()
 
-    empName = user_data['name']
+    empName = user_data['username']
     id = employee_id
     csv_content = ""
     for todo in todos_data:
