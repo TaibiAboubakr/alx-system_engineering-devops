@@ -19,7 +19,7 @@ def get_employee_todo_progress():
     all_id = []
     for user in users_data:
         all_id.append(user["id"])
-
+    datav1 = "{"
     for EmpID in all_id:
         url1 = f"https://jsonplaceholder.typicode.com/users/{EmpID}"
         user_resp = requests.get(f'{url1}')
@@ -31,17 +31,17 @@ def get_employee_todo_progress():
         user_data = user_resp.json()
         todos_data = todos_resp.json()
         emp = user_data['username']
-        data = "{"
-        data += f'"{EmpID}": ['
+        data = f'"{EmpID}": ['
         for todo in todos_data:
             st = str(todo['completed']).lower()
             tl = todo['title']
             data += "{"
-            data += f'"username": "{emp}", "task": "{tl}", "completed": {st}"'
+            data += f'"username": "{emp}", "task": "{tl}", "completed": {st}'
             data += "}, "
         content = data.rstrip(", ")
         content += "], "
-    AllUsersData = content.rstrip(", ")
+        datav1 += content
+    AllUsersData = datav1.rstrip(", ")
     AllUsersData += "}"
 
     json_file = "todo_all_employees.json"
