@@ -23,17 +23,17 @@ def get_employee_todo_progress(employee_id):
     user_data = user_response.json()
     todos_data = todos_response.json()
 
-    empName = user_data['username']
+    emp = user_data['username']
     id = employee_id
-    json_content = "{"
-    json_content += f'"{id}": ['
+    data = "{"
+    data += f'"{id}": ['
     for todo in todos_data:
-        task_status = str(todo['completed']).lower()
-        task_tilte = todo['title']
-        json_content += "{"
-        json_content += f'"task": "{task_tilte}", "completed": {task_status}, "username": "{empName}"'
-        json_content += "}, "
-    content = json_content.rstrip(", ")
+        st = str(todo['completed']).lower()
+        tl = todo['title']
+        data += "{"
+        data += f'"task": "{tl}", "completed": {st}, "username": "{emp}"'
+        data += "}, "
+    content = data.rstrip(", ")
     content += "]}"
     json_file = f"{id}.json"
     with open(json_file, 'w') as file:
