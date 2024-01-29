@@ -25,11 +25,11 @@ def get_employee_todo_progress(employee_id):
     T_Tasks = len(todos_data)
     cmpTasks = sum(todo['completed'] for todo in todos_data)
 
-    print(f"Employee {empName} is done with tasks ({cmpTasks}/{T_Tasks}):")
+    print(f"Employee {empName} is done with tasks({cmpTasks}/{T_Tasks}):")
 
     for todo in todos_data:
         if todo['completed']:
-            print(f"\t{todo['title']}")
+            print(f"\t {todo['title']}")
 
 
 if __name__ == "__main__":
