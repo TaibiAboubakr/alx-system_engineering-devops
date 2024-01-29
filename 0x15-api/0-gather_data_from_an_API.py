@@ -4,8 +4,6 @@ returns information about his/her 'TODO' list progress."""
 
 import requests
 import sys
-"""  Importing modules """
-
 
 def get_employee_todo_progress(employee_id):
     """ get_employee_todo_progress """
