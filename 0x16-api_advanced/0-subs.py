@@ -6,6 +6,8 @@ import requests
 def number_of_subscribers(subreddit):
     """ function that queries the Reddit API and
     returns the number of subscribers """
+    if type(subreddit) is not str:
+        return 0
     apiurl = f"https://www.reddit.com/r/{subreddit}/about.json"
     re = requests.get(apiurl,
                       headers={'User-Agent': '0x16-api_advanced:project:v1.0.0\
