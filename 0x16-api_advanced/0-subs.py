@@ -15,6 +15,6 @@ def number_of_subscribers(subreddit):
         if 'data' in content and 'subscribers' in content['data']:
             return content['data']['subscribers']
         else:
-            return
+            return 0
     except Exception as e:
         return 0
