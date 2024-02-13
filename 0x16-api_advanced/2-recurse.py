@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""  recursive function that queries the Reddit
+API and returns a list containing the titles of
+all hot articles for a given subreddit.  """
 import requests
+
 
 def recurse(subreddit, hot_list=None, after=None):
     """
@@ -7,8 +11,10 @@ def recurse(subreddit, hot_list=None, after=None):
 
     Parameters:
     - subreddit (str): The name of the subreddit.
-    - hot_list (list): List to accumulate the titles of hot articles (default is None).
-    - after (str): Token indicating the last post on the current page (default is None).
+    - hot_list (list): List to accumulate the titles of hot
+    articles (default is None).
+    - after (str): Token indicating the last post on the current
+    page (default is None).
 
     Returns:
     - List of titles if posts are found, None otherwise.
@@ -18,7 +24,8 @@ def recurse(subreddit, hot_list=None, after=None):
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
     headers = {'User-Agent': 'MyRedditApp/1.0.0 (by /u/YourRedditUsername)'}
     params = {'after': after} if after else {}
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
         if 'data' in data and 'children' in data['data']:
@@ -35,7 +42,6 @@ def recurse(subreddit, hot_list=None, after=None):
         return None
 
     else:
-        print(f"Failed to retrieve hot posts. Status code: {response.status_code}")
+        print(f"Failed. Status code: {response.status_code}")
 
     return hot_list
-
