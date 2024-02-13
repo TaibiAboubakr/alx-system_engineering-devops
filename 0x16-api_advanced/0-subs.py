@@ -10,7 +10,7 @@ def number_of_subscribers(subreddit):
         return 0
     apiurl = f"https://www.reddit.com/r/{subreddit}/about.json"
     header = {
-        'User-Agent': '0x16-api_advanced:project:v1.0.0(by /u/taibi_aboubakr)'
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
         }
     re = requests.get(apiurl, headers=header, allow_redirects=False).json()
     num_subscribers = re.get("data", {}).get("subscribers", 0)
