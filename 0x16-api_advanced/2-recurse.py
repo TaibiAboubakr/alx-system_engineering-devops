@@ -22,7 +22,7 @@ def recurse(subreddit, hot_list=None, after=None):
     if hot_list is None:
         hot_list = []
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
-    headers = {'User-Agent': 'linux:0x16-api_advanced:/1.0.0 (by /u/aboubakrtaibi)'}
+    headers = {'User-Agent': '0x16-api_advanced:/1.0.0 (by /u/aboubakrtaibi)'}
     params = {'after': after} if after else {}
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
