@@ -2,7 +2,7 @@
 """ Imporinting modules """
 import praw
 
-
+""" Imporinting modules """
 reddit = praw.Reddit(client_id='oI_HBBvaECtCtfvfyGWa9A',
                      client_secret='9RqlwHup5RHUsnxPGm9nnXKFLejcZQ',
                      user_agent='api_advanced by /u aboubakrtaibi')
